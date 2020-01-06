@@ -100,6 +100,8 @@ io.on('connection', function(socket) {
     socket.on('disconnect', function(reason) {
         console.log("서버에서 나감");
 
+
+        // 사람이 한명 나가면 남은사람이 승리하는 코드
         if (clients.length == 1)
         {
             io.to(clients.length.clientId).emit('win');
